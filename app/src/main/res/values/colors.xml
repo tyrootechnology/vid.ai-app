@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFA</color>
+    <color name="colorPrimaryDark">#bebebe</color>
+    <color name="colorAccent">#2979FF</color>
+    <color name="colorAccentLight">#2979FF</color>
+    <color name="colorAccentTint">#5481FF</color>
+    <color name="colorAccentShade">#235DEC</color>
+    <color name="colorAccentButton">#5481FF</color>
+    <color name="colorWindowBackground">#ffffff</color>
+    <color name="textColorPrimary">#151414</color>
+    <color name="statusBarColor">#bebebe</color>
+    <color name="navigationBarColor">#c0c0c0</color>
+</resources>
