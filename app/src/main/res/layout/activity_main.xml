@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/tv_wait"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Please wait..."/>
 
     <Button
         android:id="@+id/btn_go_discover"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Display Ads" />
+        android:layout_margin="20dp"
+        android:text="Discover wall Ads" />
 
-    <com.tyroo.tva.sdk.AdView
-        android:id="@+id/adView"
-        android:layout_height="match_parent"
+    <Button
+        android:id="@+id/btn_carousal"
         android:layout_width="match_parent"
-        android:layout_below="@id/btn_go_discover"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Carousal Ads" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_interstitial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Interstitial Ads" />
+
+</LinearLayout>

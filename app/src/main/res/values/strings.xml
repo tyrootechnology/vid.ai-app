@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TyrooVAST Demo</string>
+    <string name="app_name">Vid.AI Demo</string>
     <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
 
     <string name="title_section1">Section 1</string>
