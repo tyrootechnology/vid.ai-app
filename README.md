@@ -6,6 +6,9 @@ AI DRIVEN  VIDEO CONTENT ENGAGEMENT PLATFORM
 
 ## Release Notes
 
+### VERSION 1.0.2
+* Added support for VAST 2.0 and VAST 3.0
+
 ### VERSION 1.0.1
 * Null Pointer bug fixed.
 
@@ -24,11 +27,11 @@ For more information please see [the website](http://www.tyroo.com/)
 
 ### Integrate Vid.ai SDK AAR File
 
-* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release_1.0.1.aar)
+* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.0.2.aar)
 
 To manually include external or downloaded AAR file into your project create a directory named 'libs' into your app module.
 
-Lets say you have kept aar file in libs folder ( assume file name is vidai-release_1.0.1.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
+Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.0.2.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
 
 
 ```groovy
@@ -45,7 +48,7 @@ and now open app level build.grdle file and add .aar file
 
 ```groovy
 dependencies {
-       compile(name:'vidai-release_1.0.1', ext:'aar')
+       compile(name:'vidai-release-1.0.2', ext:'aar')
 }
 ```
 
@@ -450,7 +453,7 @@ If you are using ProGuard you might need to add the following option:
 
 | Library Name                                              | Contribution towards Increase in App Size | 
 | ----------------------------------------------------      |:-----------------------------------------:|
-| compile (name: 'tva-release_1.0.1', ext:'aar')            | 568Kb                                     |
+| compile (name: 'tva-release-1.0.2', ext:'aar')            | 568Kb                                     |
 | compile "com.android.support:recyclerview-v7:25.3.1"      | 400 Kb                                    |
 
 
@@ -462,7 +465,7 @@ Include the following libraries in the gradle (application),if app is using ```c
 
 | Library Name                                              | Contribution towards Increase in App Size | 
 | ----------------------------------------------------      |:-----------------------------------------:|
-| compile (name: 'tva-release_1.0.1', ext:'aar')            | 568Kb                                     |
+| compile (name: 'tva-release-1.0.2', ext:'aar')            | 568Kb                                     |
 | compile "com.android.support:recyclerview-v7:23.0.2"      | 430 Kb                                    |
 
 
