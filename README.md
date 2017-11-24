@@ -8,6 +8,7 @@ AI DRIVEN  VIDEO CONTENT ENGAGEMENT PLATFORM
 
 ### VERSION 1.0.2
 * Added support for VAST 2.0 and VAST 3.0
+* Added support for android larger aspect ratio screen (display format with an aspect ratio of 18.5:9)
 
 ### VERSION 1.0.1
 * Null Pointer bug fixed.
