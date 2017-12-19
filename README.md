@@ -6,6 +6,12 @@ AI DRIVEN  VIDEO CONTENT ENGAGEMENT PLATFORM
 
 ## Release Notes
 
+### VERSION 1.0.4
+* Removed AdView parameter from onDisplayAds().
+* Added new method named setAdViewLayout(AdView) in TyrooVidAISdk which takes an AdView layout as parameter.
+* Removed flick from video player and replaced BallPulseIndicator progress bar with android default circular progress bar.
+* Added Alert Dialog for No Internet Connection in Discover Wall and Carousal View.
+
 ### VERSION 1.0.3
 * Improved Video Player enter or exit animation.
 * Reduce GPU overdraw.
@@ -35,7 +41,7 @@ For more information please see [the website](http://www.tyroo.com/)
 
 ### Integrate Vid.ai SDK AAR File
 
-* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.0.3.aar)
+* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.0.4.aar)
 
 To manually include external or downloaded AAR file into your project create a directory named 'libs' into your app module.
 
