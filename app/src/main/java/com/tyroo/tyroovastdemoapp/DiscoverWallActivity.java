@@ -25,6 +25,7 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
         try {
             tyrooVidAiSdk = new TyrooVidAiSdk(getApplicationContext(), this);//TyrooVidAiSdk.initialize(getApplicationContext());
             tyrooVidAiSdk.setPlacementId("1559"); // 1559 or 1563
+            tyrooVidAiSdk.setAdViewLayout(adView);
             tyrooVidAiSdk.setDynamicPlacement(true);
             tyrooVidAiSdk.enableCaching(true);
             tyrooVidAiSdk.setPackageName("009");
@@ -66,7 +67,7 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
     public void onRenderedAds(Boolean status) {
         Log.d("DiscoverWallActivity", "onRenderedAds: " + Boolean.toString(status));
         if (status){
-            tyrooVidAiSdk.displayAds(adView);
+            tyrooVidAiSdk.displayAds();
         }
     }
 

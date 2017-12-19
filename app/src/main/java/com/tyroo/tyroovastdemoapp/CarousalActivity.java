@@ -27,6 +27,7 @@ public class CarousalActivity extends AppCompatActivity implements TyrooVidAiSdk
         try {
             tyrooVidAiSdk = new TyrooVidAiSdk(getApplicationContext(), this);//TyrooVidAiSdk.initialize(getApplicationContext());
             tyrooVidAiSdk.setPlacementId("1635"); // 1559 or 1563
+            tyrooVidAiSdk.setAdViewLayout(adView);
             tyrooVidAiSdk.setDynamicPlacement(true);
             tyrooVidAiSdk.enableCaching(true);
             tyrooVidAiSdk.setPackageName("009");
@@ -68,7 +69,7 @@ public class CarousalActivity extends AppCompatActivity implements TyrooVidAiSdk
     public void onRenderedAds(Boolean status) {
         Log.d("CaousalActivity", "onRenderedAds: " + Boolean.toString(status));
         if (status){
-            tyrooVidAiSdk.displayAds(adView);
+            tyrooVidAiSdk.displayAds();
         }
     }
 
