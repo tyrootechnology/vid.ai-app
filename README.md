@@ -464,7 +464,9 @@ If you are using ProGuard you might need to add the following option:
 -keep class * {
     public private *;
 }
+-dontwarn okio.**
 -dontwarn javax.annotation.**
+
 -dontwarn com.squareup.okhttp.**
 -dontwarn com.squareup.okhttp3.**
 -keep class com.squareup.okhttp.** { *;}
@@ -477,6 +479,7 @@ If you are using ProGuard you might need to add the following option:
   *; }
 
 -dontwarn okhttp3
+
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
 -dontwarn okhttp3.**
@@ -485,9 +488,15 @@ If you are using ProGuard you might need to add the following option:
 -dontwarn com.fasterxml.**
 -dontwarn okio.**
 -dontwarn retrofit2.**
+
 -dontwarn com.bea.xml.stream.**
 -dontwarn javax.xml.**
+
 -dontwarn javax.naming.**
 -dontwarn javax.servlet.**
 -dontwarn org.slf4j.**
+
+-keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
+    boolean mShiftingMode;
+}
 ```
