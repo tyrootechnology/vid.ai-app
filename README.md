@@ -6,7 +6,7 @@ AI DRIVEN  VIDEO CONTENT ENGAGEMENT PLATFORM
 
 ## Release Notes
 
-### VERSION 1.0.4
+### VERSION 1.0.4-Beta version
 * Removed AdView parameter from ```onDisplayAds()```.
 * Added new method named ```setAdViewLayout(AdView)``` in ```TyrooVidAISdk``` which takes an ```AdView``` layout as parameter.
 * Removed flick from video player and replaced BallPulseIndicator progress bar with android default circular progress bar.
