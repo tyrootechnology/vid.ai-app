@@ -42,19 +42,19 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
         //InitiateTyrooSdk.destroyInstance();
         // RefWatcher refWatcher = DemoApplication.getRefWatcher(this);
         // refWatcher.watch(this);
+        adView.removeAllViews();
+        tyrooVidAiSdk.flush();
         super.onDestroy();
     }
 
     @Override
-    public void onSuccess(String message) {
+    public void onSuccess(String message, String placementId) {
         Log.d("DiscoverWallActivity", "onSuccess: " + message);
 
     }
 
     @Override
     public void onBackPressed() {
-        adView.removeAllViews();
-        //TyrooVidAiSdk.flush();
         super.onBackPressed();
     }
 
@@ -64,7 +64,7 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
     }
 
     @Override
-    public void onRenderedAds(Boolean status) {
+    public void onRenderedAds(Boolean status, String placementId) {
         Log.d("DiscoverWallActivity", "onRenderedAds: " + Boolean.toString(status));
         if (status){
             tyrooVidAiSdk.displayAds();

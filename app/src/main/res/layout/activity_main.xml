@@ -9,6 +9,20 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_video_in_feed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Video In Feed" />
+
+    <Button
+        android:id="@+id/btn_video_feed_with_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Video Feed with RecyclerView" />
+
+    <Button
         android:id="@+id/btn_go_discover"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

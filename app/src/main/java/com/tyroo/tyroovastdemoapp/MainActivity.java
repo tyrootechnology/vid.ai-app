@@ -11,24 +11,44 @@ import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
 public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooSdkListener {
 
-    Button goDiscover, goCarousal, goInterstitial;
+    Button btnVideoInFeed, btnDiscover, btnCarousal, btnInterstitial, btnWithRecyclerView;
     TyrooVidAiSdk tyrooVidAiSdk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        goDiscover = (Button) findViewById(R.id.btn_go_discover);
-        goCarousal = (Button) findViewById(R.id.btn_carousal);
-        goInterstitial = (Button) findViewById(R.id.btn_interstitial);
 
-        goDiscover.setOnClickListener(goDiscoverClick);
-        goCarousal.setOnClickListener(goCarousalClick);
-        goInterstitial.setVisibility(View.INVISIBLE);
+        btnVideoInFeed = (Button) findViewById(R.id.btn_video_in_feed);
+        btnDiscover = (Button) findViewById(R.id.btn_go_discover);
+        btnCarousal = (Button) findViewById(R.id.btn_carousal);
+        btnInterstitial = (Button) findViewById(R.id.btn_interstitial);
+        btnWithRecyclerView = (Button) findViewById(R.id.btn_video_feed_with_rv);
+
+        btnVideoInFeed.setOnClickListener(goVideoInFeedClick);
+        btnWithRecyclerView.setOnClickListener(goVideoInFeedWithRecyclerView);
+        btnDiscover.setOnClickListener(goDiscoverClick);
+        btnCarousal.setOnClickListener(goCarousalClick);
+        btnInterstitial.setVisibility(View.INVISIBLE);
         //adView = (AdView) findViewById(R.id.adView);
 
         initTyrooVidAiSdk();
     }
+
+    private View.OnClickListener goVideoInFeedClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(MainActivity.this, VideoInFeedActivity.class));
+        }
+    };
+
+    private View.OnClickListener goVideoInFeedWithRecyclerView = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+        }
+    };
+
     private View.OnClickListener goDiscoverClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -53,8 +73,8 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
             tyrooVidAiSdk.validate();
 
 
-            goInterstitial.setVisibility(View.INVISIBLE);
-            goInterstitial.setOnClickListener(new View.OnClickListener() {
+            btnInterstitial.setVisibility(View.INVISIBLE);
+            btnInterstitial.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //startActivity(new Intent(MainActivity.this, DiscoverActivity.class));
@@ -72,18 +92,18 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
         //InitiateTyrooSdk.destroyInstance();
        // RefWatcher refWatcher = DemoApplication.getRefWatcher(this);
        // refWatcher.watch(this);
+        tyrooVidAiSdk.flush();
         super.onDestroy();
     }
 
     @Override
     public void onBackPressed() {
         //adView.removeAllViews();
-        TyrooVidAiSdk.flush();
         super.onBackPressed();
     }
 
     @Override
-    public void onSuccess(String message) {
+    public void onSuccess(String message, String placementId) {
         Log.d("MainActivity", "onSuccess: " + message);
 
     }
@@ -94,10 +114,10 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
     }
 
     @Override
-    public void onRenderedAds(Boolean status) {
+    public void onRenderedAds(Boolean status, String placementId) {
         Log.d("MainActivity", "onRenderedAds: " + Boolean.toString(status));
         //tvWait.setVisibility(View.GONE);
-        goInterstitial.setVisibility(View.VISIBLE);
+        btnInterstitial.setVisibility(View.VISIBLE);
     }
 
     @Override
