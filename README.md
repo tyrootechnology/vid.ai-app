@@ -2,7 +2,7 @@ VID.AI Demo application
 =======================
 AI DRIVEN  VIDEO CONTENT ENGAGEMENT PLATFORM
 
-![](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/slide1.PNG)
+![](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/Slide1.PNG)
 
 ## Release Notes
 
