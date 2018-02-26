@@ -1,6 +1,6 @@
 VID.AI Android SDK
 =======================
-This guide and sample code intended for publishers who want to monetize an Android app with VID.AI SDK.
+This guide and sample code is intended for publishers who want to monetize their Android app with VID.AI SDK.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
