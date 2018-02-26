@@ -119,7 +119,7 @@ If everything goes well you will see library entry is made in build -> exploded-
 
 In feed/In Article videos can be customised to suit the applications look and feel. Sample format is displayed below. Multiple customisation options are available which can be seen [here](http://www.tyroo.com/)
 
-![Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
+[Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
 
 ![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
 
