@@ -9,12 +9,15 @@ For more information please see [the website](http://www.tyroo.com/)
 ## Changelog
 To see what has changed in recent versions of VID.AI SDK for Android, see the [CHANGELOG](CHANGELOG.md).
 
-### How Does Video Monetisation Work
+## How Does Video Monetisation Work
 Video Content consumption is growing on mobile and advertisers are spending huge dollar on video advertising. 50% of these videos are consumed on mobile. Focus on short format video has also increased as the average human span attention is less than 8 sec. Also there is in an interesting insight about video consumption, 98% of time Phones are used in portrait mode while consuming videos. Our video content cloud SDK gives access to Short format vertical and horizontal videos.Our Android native video player embedded in SDK supports VAST 4.0, VAST 3.0 and VAST 2.0 Inline Linear Ads.
 
-### Prerequisite 
+## Get Started
+Integrating the VID.AI Video Ads SDK into an app is the first step toward displaying ads and earning revenue. Once that's done, you can choose an ad format (such as Video in feed or Interstisial video) and get a detailed set of steps for implementing it.
+
+### Requirements 
 - Use Android Studio 2.0 or higher
-- Target Android API level 16 or higher
+- Target Android API level 14 or higher (added in sdk version 1.0.7)
 - Recommended: create an [VID.AI Account](http://www.tyroo.com/) and [register an app](http://www.tyroo.com/).
 
 ### Adding the SDK to your Project
@@ -115,7 +118,7 @@ If everything goes well you will see library entry is made in build -> exploded-
 **In Feed/In Article Video**
 
 In feed/In Article videos can be customised to suit the applications look and feel. Sample format is displayed below. Multiple customisation options are available which can be seen [here](http://www.tyroo.com/)
-
+![Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
 ![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
 
 **Offerwall Videos**
@@ -130,3 +133,9 @@ In feed/In Article videos can be customised to suit the applications look and fe
 
 ![Interstisial](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/interstitial.png)
 
+
+## Your feedback and questions
+At Tyroo we're massive believers in feedback! Here are some common ways to share your thoughts with us:
+  - Posting issue/question/enhancement on our [issues page](https://github.com/tyrootechnology/vid.ai-app/issues).
+  - Email us: support@tyroo.com
+  
