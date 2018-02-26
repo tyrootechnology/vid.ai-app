@@ -18,7 +18,9 @@ Integrating the VID.AI Video Ads SDK into an app is the first step toward displa
 ### Requirements 
 - Use Android Studio 2.0 or higher
 - Target Android API level 14 or higher (added in sdk version 1.0.7)
-- Recommended: Please contact support@tyroo.com for register the application.
+
+### Register App
+- Please contact support@tyroo.com for register the application.
 
 ### Adding the SDK to your Project
 
@@ -27,7 +29,7 @@ Integrating the VID.AI Video Ads SDK into an app is the first step toward displa
 If you are using Gradle to build your Android applications, you can pull the latest version of the SDK from jCenter.
 
 
-**Step 1:** Include this in your top-level ```build.gradle``` file:
+Step 1: Include this in your top-level ```build.gradle``` file:
 
 ```groovy
 allprojects {
@@ -36,12 +38,12 @@ allprojects {
     }
 }
 ```
-**Step 2:** Add the following line to the dependencies element in your application module’s build.gradle.
+Step 2: Add the following line to the dependencies element in your application module’s build.gradle.
 
 ```groovy
 compile 'com.tyroo:vidai:1.0.5'
 ```
-**Step 3:** Sync your Gradle project to ensure that the dependency is downloaded by the build system.
+Step 3: Sync your Gradle project to ensure that the dependency is downloaded by the build system.
 
 
 **Method 2:** Manual Download
