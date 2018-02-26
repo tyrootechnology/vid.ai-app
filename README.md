@@ -143,3 +143,6 @@ At Tyroo we're massive believers in feedback! Here are some common ways to share
   - Posting issue/question/enhancement on our [issues page](https://github.com/tyrootechnology/vid.ai-app/issues).
   - Email us: support@tyroo.com
   
+
+## ProGuard Rules
+If you are using ProGuard you might need to add these [PROGUARD RULES](PROGUARD_RULES.md):
