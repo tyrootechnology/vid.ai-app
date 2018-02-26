@@ -120,7 +120,7 @@ In-Feed or In-Article Video ads-namely, the ads that show up in the middle of th
 
 In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines. Sample format is displayed below.
 
-[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-Video)
 ![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
 ### Offerwall Videos
 The Offerwall format lets you show multiple video ads in a Grid form. Sample format is displayed below.
