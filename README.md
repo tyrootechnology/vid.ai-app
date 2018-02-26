@@ -125,17 +125,17 @@ In feed/In Article videos can be customised to suit the applications look and fe
 ### Offerwall Videos
 The Offerwall format lets you show multiple video ads in a Grid form. Sample format is displayed below.
 
-[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Offerwall-Videos)
 ![Offerwall](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/discoverwall.png)
 ### In Feed/In Article carousel Video
 The carousel format lets you show multiple videos ads, headlines and links, or calls to action in a single ad unit. Anyone who sees ad can then scroll through the carousel cards by swiping left-right on mobile phones.
 
-[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-carousel-Video)
 ![Carousel](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/carousel.png)
-### Interstisial Video
+### Interstitial Video
 Interstitial video ads are full-screen ad formats covering the interface of an app and appearing at natural app action points.
 
-[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Interstitial-Video)
 ![Interstisial](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/interstitial.png)
 
 ## Your feedback and questions
