@@ -1,43 +1,36 @@
-VID.AI Demo application
+VID.AI Android SDK
 =======================
-AI DRIVEN  VIDEO CONTENT ENGAGEMENT PLATFORM
-
-![](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/Slide1.PNG)
-
-## Release Notes
-
-### VERSION 1.0.5
-* Removed AdView parameter from ```onDisplayAds()```.
-* Added new method named ```setAdViewLayout(AdView)``` in ```TyrooVidAISdk``` which takes an ```AdView``` layout as parameter.
-* Removed flick from video player and replaced BallPulseIndicator progress bar with android default circular progress bar.
-* Added Alert Dialog for No Internet Connection in Discover Wall and Carousal View.
-
-### VERSION 1.0.3
-* Improved Video Player enter or exit animation.
-* Reduce GPU overdraw.
-* Handled Network connectivity.
-* Close button added in Interstitial Screen
-
-### VERSION 1.0.2
-* Added support for VAST 2.0 and VAST 3.0
-* Added support for android larger aspect ratio screen (display format with an aspect ratio of 18.5:9)
-* Video player animation bug fixed.
-
-### VERSION 1.0.1
-* Null Pointer bug fixed.
-
-### VERSION 1.0.0
-* Added Discover, carousel and vertical full screen video ad formats.
-* Added Support for VAST 4.0
-* Gesture Supported Video Player
-
-
-
-## Getting Started
+This guide and sample code intended for publishers who want to monetize an Android app with VID.AI SDK.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 For more information please see [the website](http://www.tyroo.com/)
+
+## Changelog
+To see what has changed in recent versions of VID.AI SDK for Android, see the [CHANGELOG](CHANGELOG.md).
+
+### How Does Video Monetisation Work
+Video Content consumption is growing on mobile and advertisers are spending huge dollar on video advertising. 50% of these videos are consumed on mobile. Focus on short format video has also increased as the average human span attention is less than 8 sec. Also there is in an interesting insight about video consumption, 98% of time Phones are used in portrait mode while consuming videos. Our video content cloud SDK gives access to Short format vertical and horizontal videos.Our Android native video player embedded in SDK supports VAST 4.0, VAST 3.0 and VAST 2.0 Inline Linear Ads.
+
+### Available Ad Formats 
+**In Feed/In Article Video
+
+In feed/In Article videos can be customised to suit the applications look and feel. Sample format is displayed below. Multiple customisation options are available which can be seen [here](http://www.tyroo.com/)
+
+![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
+
+**Offerwall Videos
+
+![Offerwall](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/discoverwall.png)
+
+**In Feed/In Article carousel Video
+
+![Carousel](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/carousel.png)
+
+**Interstisial Video
+
+![Interstisial](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/interstitial.png)
+
 
 ### Adding the SDK to your Project
 
