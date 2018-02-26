@@ -18,7 +18,7 @@ Integrating the VID.AI Video Ads SDK into an app is the first step toward displa
 ### Requirements 
 - Use Android Studio 2.0 or higher
 - Target Android API level 14 or higher (added in sdk version 1.0.7)
-- Recommended: create an [VID.AI Account](http://www.tyroo.com/) and [register an app](http://www.tyroo.com/).
+- Recommended: Please contact support@tyroo.com for register the application.
 
 ### Adding the SDK to your Project
 
@@ -116,25 +116,27 @@ If everything goes well you will see library entry is made in build -> exploded-
 
 ### Available Ad Formats 
 **In Feed/In Article Video**
+In-Feed or In-Article Video ads-namely, the ads that show up in the middle of the stream as you scroll through your favorite news feed, social feed, at some position of recyclerview, application start screen or some other portion of the app.
 
-In feed/In Article videos can be customised to suit the applications look and feel. Sample format is displayed below. Multiple customisation options are available which can be seen [here](http://www.tyroo.com/)
+In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines. Sample format is displayed below. 
 
-[Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
-
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
 ![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
-
 **Offerwall Videos**
+The Offerwall format lets you show multiple video ads in a Grid form. Sample format is displayed below.
 
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
 ![Offerwall](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/discoverwall.png)
-
 **In Feed/In Article carousel Video**
+The carousel format lets you show multiple videos ads, headlines and links, or calls to action in a single ad unit. Anyone who sees ad can then scroll through the carousel cards by swiping left-right on mobile phones.
 
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
 ![Carousel](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/carousel.png)
-
 **Interstisial Video**
+Interstitial video ads are full-screen ad formats covering the interface of an app and appearing at natural app action points.
 
+[See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/InVideoFeed)
 ![Interstisial](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/interstitial.png)
-
 
 ## Your feedback and questions
 At Tyroo we're massive believers in feedback! Here are some common ways to share your thoughts with us:
