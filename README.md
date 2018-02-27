@@ -117,28 +117,31 @@ If everything goes well you will see library entry is made in build -> exploded-
 ```
 
 ## Available Ad Formats 
+
+![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
+
 ### In Feed/In Article Video
 In-Feed or In-Article Video ads-namely, the ads that show up in the middle of the stream as you scroll through your favorite news feed, social feed, at some position of recyclerview, application start screen or some other portion of the app.
 
 In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines. Sample format is displayed below.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-Video)
-![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
+
 ### Offerwall Videos
 The Offerwall format lets you show multiple video ads in a Grid form. Sample format is displayed below.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Offerwall-Videos)
-![Offerwall](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/discoverwall.png)
+
 ### In Feed/In Article carousel Video
 The carousel format lets you show multiple videos ads, headlines and links, or calls to action in a single ad unit. Anyone who sees ad can then scroll through the carousel cards by swiping left-right on mobile phones.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-carousel-Video)
-![Carousel](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/carousel.png)
+
 ### Interstitial Video
 Interstitial video ads are full-screen ad formats covering the interface of an app and appearing at natural app action points.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Interstitial-Video)
-![Interstisial](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/interstitial.png)
+
 
 ## Your feedback and questions
 At Tyroo we're massive believers in feedback! Here are some common ways to share your thoughts with us:
