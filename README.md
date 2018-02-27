@@ -123,12 +123,12 @@ If everything goes well you will see library entry is made in build -> exploded-
 ### In Feed/In Article Video
 In-Feed or In-Article Video ads-namely, the ads that show up in the middle of the stream as you scroll through your favorite news feed, social feed, at some position of recyclerview, application start screen or some other portion of the app.
 
-In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines. Sample format is displayed below.
+In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-Video)
 
 ### Offerwall Videos
-The Offerwall format lets you show multiple video ads in a Grid form. Sample format is displayed below.
+The Offerwall format lets you show multiple video ads in a Grid form.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Offerwall-Videos)
 
