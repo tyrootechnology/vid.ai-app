@@ -118,7 +118,7 @@ If everything goes well you will see library entry is made in build -> exploded-
 
 ## Available Ad Formats 
 
-![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
+![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/screen.jpg)
 
 ### In Feed/In Article Video
 In-Feed or In-Article Video ads-namely, the ads that show up in the middle of the stream as you scroll through your favorite news feed, social feed, at some position of recyclerview, application start screen or some other portion of the app.
