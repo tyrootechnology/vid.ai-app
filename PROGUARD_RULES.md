@@ -1,10 +1,12 @@
 
 ```groovy
 
+-ignorewarnings
+
 -keep class * {
     public private *;
 }
--dontwarn okio.**
+
 -dontwarn javax.annotation.**
 
 -dontwarn com.squareup.okhttp.**
@@ -29,8 +31,18 @@
 -dontwarn okio.**
 -dontwarn retrofit2.**
 
--dontwarn com.bea.xml.stream.**
+# Simple-Xml Proguard Config
+-dontwarn com.bea.xml.**
 -dontwarn javax.xml.**
+-dontwarn org.simpleframework.xml.stream.**
+-keep class org.simpleframework.xml.**{ *; }
+-keepclasseswithmembers class org.simpleframeork.** { *; }
+-keepclassmembers class * {
+    @org.simpleframework.xml.* *;
+}
+-keep class com.tyroo.vidai.vast.* {
+        *;
+}
 
 -dontwarn javax.naming.**
 -dontwarn javax.servlet.**
@@ -39,4 +51,26 @@
 -keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
     boolean mShiftingMode;
 }
+
+#---Otto---
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @com.squareup.otto.Subscribe public *;
+    @com.squareup.otto.Produce public *;
+}
+
+-keepattributes Signature
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+# Gson specific classes
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.** { *; }
+-keepclassmembers class com.google.gson** {*;}
+-keep class com.tyroo.vidai.entities.* { *; }
+
+-dontwarn android.support.v4.**
+-keep public class com.google.android.gms.* { public *; }
+-dontwarn com.google.android.gms.**
+-keepnames class org.apache.** {*;}
+-keep public class org.apache.** {*;}
 ```
