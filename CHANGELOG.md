@@ -2,6 +2,7 @@ Changelog
 =====================
 
 ## 1.0.7 (March 05, 2018)
+- Support for API level 14.
 - Update proguard-rules.
 - Improvements in InVideoFeed ad format.
 
