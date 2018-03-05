@@ -1,6 +1,10 @@
 Changelog
 =====================
 
+## 1.0.7 (March 05, 2018)
+- Update proguard-rules.
+- Improvements in InVideoFeed ad format.
+
 ## 1.0.6 (Feb 23, 2018)
 - Added new InVideoFeed Ad format.
 
