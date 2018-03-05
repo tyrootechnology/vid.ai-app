@@ -41,7 +41,7 @@ allprojects {
 Step 2: Add the following line to the dependencies element in your application module’s build.gradle.
 
 ```groovy
-compile 'com.tyroo:vidai:1.0.5'
+compile 'com.tyroo:vidai:1.0.7'
 ```
 Step 3: Sync your Gradle project to ensure that the dependency is downloaded by the build system.
 
@@ -70,7 +70,7 @@ and now open app level build.grdle file and add .aar file
 
 ```groovy
 dependencies {
-       compile(name:'vidai-release-1.0.5', ext:'aar')
+       compile(name:'vidai-release-1.0.7', ext:'aar')
 }
 ```
 
@@ -111,7 +111,7 @@ If everything goes well you will see library entry is made in build -> exploded-
 <dependency>
   <groupId>com.tyroo</groupId>
   <artifactId>vidai</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.7</version>
   <type>pom</type>
 </dependency>
 ```
