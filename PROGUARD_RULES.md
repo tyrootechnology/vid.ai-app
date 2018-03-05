@@ -1,8 +1,6 @@
 
 ```groovy
 
--ignorewarnings
-
 -keep class * {
     public private *;
 }
@@ -63,14 +61,15 @@
 # For using GSON @Expose annotation
 -keepattributes *Annotation*
 # Gson specific classes
+-dontwarn sun.misc.**
+-dontwarn com.google.gson.**
+-keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.stream.** { *; }
 -keep class com.google.gson.** { *; }
 -keepclassmembers class com.google.gson** {*;}
--keep class com.tyroo.vidai.entities.* { *; }
+-keep class com.tyroo.vidai.entities.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
 
--dontwarn android.support.v4.**
--keep public class com.google.android.gms.* { public *; }
--dontwarn com.google.android.gms.**
--keepnames class org.apache.** {*;}
--keep public class org.apache.** {*;}
 ```
