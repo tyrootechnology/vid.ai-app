@@ -30,14 +30,22 @@
 -dontwarn retrofit2.**
 
 # Simple-Xml Proguard Config
+-dontwarn com.fasterxml.**
 -dontwarn com.bea.xml.**
+-dontwarn com.bea.xml.stream.**
 -dontwarn javax.xml.**
+-dontwarn javax.xml.stream.events.**
 -dontwarn org.simpleframework.xml.stream.**
 -keep class org.simpleframework.xml.**{ *; }
 -keepclasseswithmembers class org.simpleframeork.** { *; }
 -keepclassmembers class * {
     @org.simpleframework.xml.* *;
 }
+-keepclassmembers,allowobfuscation class * {
+    @org.simpleframework.xml.* <fields>;
+    @org.simpleframework.xml.* <init>(...);
+}
+
 -keep class com.tyroo.vidai.vast.* {
         *;
 }
