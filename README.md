@@ -17,7 +17,7 @@ Integrating the VID.AI Video Ads SDK into an app is the first step toward displa
 
 ### Requirements 
 - Use Android Studio 2.0 or higher
-- Target Android API level 14 or higher (added in sdk version 1.0.7)
+- Target Android API level 16 or higher
 
 ### Register App
 - Please contact support@tyroo.com for register the application.
