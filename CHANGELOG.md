@@ -1,6 +1,13 @@
 Changelog
 =====================
 
+## 1.1.2 (March 28, 2018)
+- Modified TyrooAdListener callbacks and added onAdClicked, onAdOpened, onAdLeftApplication etc methods.
+- Change integration process.
+- Added new preload ads method.
+- Added PreloadAdsListener Interface.
+- 
+
 ## 1.1.1 (March 20, 2018)
 - Handled println exception.
 
