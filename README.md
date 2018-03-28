@@ -151,4 +151,4 @@ At Tyroo we're massive believers in feedback! Here are some common ways to share
   
 
 ## ProGuard Rules
-If you are using ProGuard you might need to add these [PROGUARD RULES](PROGUARD_RULES.md):
+If you are using ProGuard you might need to add these [PROGUARD RULES](PROGUARD_RULES.md).
