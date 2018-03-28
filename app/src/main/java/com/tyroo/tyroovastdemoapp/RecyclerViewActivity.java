@@ -14,7 +14,7 @@ import com.tyroo.tva.sdk.TyrooVidAiSdk;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooSdkListener{
+public class RecyclerViewActivity extends AppCompatActivity{
 
     public static final String TAG = RecyclerViewActivity.class.getSimpleName();
 
@@ -31,7 +31,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements TyrooVidA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
         try {
-            initTyrooVidAiSdk();
+            preLoadRequest();
             init();
             getViews();
             bindData();
@@ -53,28 +53,6 @@ public class RecyclerViewActivity extends AppCompatActivity implements TyrooVidA
         //mRecyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
-    private void initTyrooVidAiSdk() {
-        try {
-            tyrooVidAiSdk = new TyrooVidAiSdk(getApplicationContext(), this);//TyrooVidAiSdk.initialize(getApplicationContext());
-            tyrooVidAiSdk.setPlacementId("1707"); //1637, 1673 or 1563
-            tyrooVidAiSdk.setDynamicPlacement(true);
-            tyrooVidAiSdk.enableCaching(true);
-            tyrooVidAiSdk.setPackageName("009");
-            tyrooVidAiSdk.validate();
-
-
-            /*btnDiscover.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //startActivity(new Intent(MainActivity.this, DiscoverActivity.class));
-                    tyrooVidAiSdk.displayAds();
-
-                }
-            });*/
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     protected void onStart() {
@@ -120,31 +98,17 @@ public class RecyclerViewActivity extends AppCompatActivity implements TyrooVidA
 
     }
 
+    private void preLoadRequest() {
+        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1707", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
+            @Override
+            public void onPreloadSuccess(String placementId) {
+                Log.d(TAG, "onPreloadSuccess: "+placementId);
+            }
 
-    @Override
-    public void onSuccess(String message, String placementId) {
-        Log.d("RecyclerViewActivity", "onSuccess: " + message);
-
-    }
-
-    @Override
-    public void onRenderingAds(Boolean status) {
-        Log.d("RecyclerViewActivity", "onRenderingAds: " + Boolean.toString(status));
-    }
-
-    @Override
-    public void onRenderedAds(Boolean status, String placementId) {
-        Log.d("RecyclerViewActivity", "onRenderedAds: " + Boolean.toString(status));
-
-    }
-
-    @Override
-    public void onDisplayAds(Boolean status) {
-        Log.d("RecyclerViewActivity", "onDisplayAds: " + Boolean.toString(status));
-    }
-
-    @Override
-    public void onFailure(String errorMsg) {
-        Log.e("RecyclerViewActivity", "onFailure: " + errorMsg);
+            @Override
+            public void onPreloadError(String errorMsg) {
+                Log.e(TAG,"onPreloadError: "+errorMsg);
+            }
+        });
     }
 }

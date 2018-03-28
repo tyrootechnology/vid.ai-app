@@ -9,8 +9,9 @@ import android.widget.Button;
 
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
-public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooSdkListener {
+public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
 
+    private static final String TAG = "MainActivity";
     Button btnVideoInFeed, btnDiscover, btnCarousal, btnInterstitial, btnWithRecyclerView;
     TyrooVidAiSdk tyrooVidAiSdk;
 
@@ -29,10 +30,16 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
         btnWithRecyclerView.setOnClickListener(goVideoInFeedWithRecyclerView);
         btnDiscover.setOnClickListener(goDiscoverClick);
         btnCarousal.setOnClickListener(goCarousalClick);
-        btnInterstitial.setVisibility(View.INVISIBLE);
-        //adView = (AdView) findViewById(R.id.adView);
 
-        initTyrooVidAiSdk();
+        btnInterstitial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayInterstitialAds();
+            }
+        });
+
+        preLoadRequest();
+
     }
 
     private View.OnClickListener goVideoInFeedClick = new View.OnClickListener() {
@@ -63,24 +70,11 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
         }
     };
 
-    private void initTyrooVidAiSdk() {
+    private void displayInterstitialAds() {
         try {
-            tyrooVidAiSdk = new TyrooVidAiSdk(getApplicationContext(), this);//TyrooVidAiSdk.initialize(getApplicationContext());
-            tyrooVidAiSdk.setPlacementId("1637"); // 1559 or 1563
-            tyrooVidAiSdk.setDynamicPlacement(true);
+            tyrooVidAiSdk = TyrooVidAiSdk.initialize(getApplicationContext(),"1637","009", this);
             tyrooVidAiSdk.enableCaching(true);
-            tyrooVidAiSdk.setPackageName("009");
-            tyrooVidAiSdk.validate();
-
-
-            btnInterstitial.setVisibility(View.INVISIBLE);
-            btnInterstitial.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //startActivity(new Intent(MainActivity.this, DiscoverActivity.class));
-                    tyrooVidAiSdk.displayAds();
-                }
-            });
+            tyrooVidAiSdk.loadAds();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -103,30 +97,56 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
     }
 
     @Override
-    public void onSuccess(String message, String placementId) {
-        Log.d("MainActivity", "onSuccess: " + message);
-
+    public void onAdLoaded(String placementId) {
+        Log.d(TAG, "onAdLoaded: "+placementId);
     }
 
     @Override
-    public void onRenderingAds(Boolean status) {
-        Log.d("MainActivity", "onRenderingAds: " + Boolean.toString(status));
+    public void onAdDisplayed() {
+        Log.d(TAG, "onAdDisplayed");
     }
 
     @Override
-    public void onRenderedAds(Boolean status, String placementId) {
-        Log.d("MainActivity", "onRenderedAds: " + Boolean.toString(status));
-        //tvWait.setVisibility(View.GONE);
-        btnInterstitial.setVisibility(View.VISIBLE);
+    public void onAdOpened() {
+        Log.d(TAG, "onAdOpened");
     }
 
     @Override
-    public void onDisplayAds(Boolean status) {
-        Log.d("MainActivity", "onDisplayAds: " + Boolean.toString(status));
+    public void onAdClosed() {
+        Log.d(TAG, "onAdClosed");
+    }
+
+    @Override
+    public void onAdCompleted() {
+        Log.d(TAG, "onAdCompleted");
+    }
+
+    @Override
+    public void onAdClicked() {
+        Log.d(TAG, "onAdClicked");
+    }
+
+    @Override
+    public void onAdLeftApplication() {
+        Log.d(TAG, "onAdLeftApplication");
     }
 
     @Override
     public void onFailure(String errorMsg) {
-        Log.e("MainActivity", "onFailure: " + errorMsg);
+        Log.e(TAG, "onFailure: " + errorMsg);
+    }
+
+    private void preLoadRequest() {
+        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1637", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
+            @Override
+            public void onPreloadSuccess(String placementId) {
+                Log.d(TAG, "onPreloadSuccess: "+placementId);
+            }
+
+            @Override
+            public void onPreloadError(String errorMsg) {
+                Log.e(TAG,"onPreloadError: "+errorMsg);
+            }
+        });
     }
 }

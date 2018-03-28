@@ -50,7 +50,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    public class AdViewHolder extends RecyclerView.ViewHolder implements TyrooVidAiSdk.TyrooSdkListener{
+    public class AdViewHolder extends RecyclerView.ViewHolder implements TyrooVidAiSdk.TyrooAdListener{
 
         AdView adView;
         TyrooVidAiSdk tyrooVidAiSdk;
@@ -60,13 +60,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             adView = (AdView) itemView.findViewById(R.id.item_ad_view);
             try {
-                tyrooVidAiSdk = new TyrooVidAiSdk(mContext.getApplicationContext(),this);//TyrooVidAiSdk.initialize(getApplicationContext());
-                tyrooVidAiSdk.setPlacementId("1707");
+                tyrooVidAiSdk = TyrooVidAiSdk.initialize(mContext.getApplicationContext(),"1707","009",this);
                 tyrooVidAiSdk.setAdViewLayout(adView);
-                tyrooVidAiSdk.setDynamicPlacement(true);
                 tyrooVidAiSdk.enableCaching(true);
-                tyrooVidAiSdk.setPackageName("009");
-                tyrooVidAiSdk.validate();
+                tyrooVidAiSdk.loadAds();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -74,38 +71,43 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
         @Override
-        public void onSuccess(String message, String placementId) {
-            Log.d(TAG, "onSuccess: " + message);
-
+        public void onAdLoaded(String placementId) {
+            Log.d(TAG, "onAdLoaded: "+placementId);
         }
 
         @Override
-        public void onRenderingAds(Boolean status) {
-            Log.d(TAG, "onRenderingAds: " + Boolean.toString(status));
+        public void onAdDisplayed() {
+            Log.d(TAG, "onAdDisplayed");
         }
 
         @Override
-        public void onRenderedAds(Boolean status, String placementId) {
-            Log.d(TAG, "onRenderedAds: " + Boolean.toString(status)+" with placement: "+placementId);
-
-            if (status) {
-                tyrooVidAiSdk.displayAds();
-                //btnDiscover.setVisibility(View.VISIBLE);
-            }
+        public void onAdOpened() {
+            Log.d(TAG, "onAdOpened");
         }
 
         @Override
-        public void onDisplayAds(Boolean status) {
-            Log.d(TAG, "onDisplayAds: " + Boolean.toString(status));
+        public void onAdClosed() {
+            Log.d(TAG, "onAdClosed");
+        }
+
+        @Override
+        public void onAdCompleted() {
+            Log.d(TAG, "onAdCompleted");
+        }
+
+        @Override
+        public void onAdClicked() {
+            Log.d(TAG, "onAdClicked");
+        }
+
+        @Override
+        public void onAdLeftApplication() {
+            Log.d(TAG, "onAdLeftApplication");
         }
 
         @Override
         public void onFailure(String errorMsg) {
             Log.e(TAG, "onFailure: " + errorMsg);
-        }
-
-        public void displayAds(){
-
         }
 
     }

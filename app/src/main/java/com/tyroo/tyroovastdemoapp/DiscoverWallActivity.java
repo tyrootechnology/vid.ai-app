@@ -7,8 +7,9 @@ import android.util.Log;
 import com.tyroo.tva.sdk.AdView;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
-public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooSdkListener {
+public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
 
+    private static final String TAG = "DiscoverWallActivity";
     AdView adView;
     TyrooVidAiSdk tyrooVidAiSdk;
 
@@ -23,13 +24,10 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
 
     private void initTyrooVidAiSdk() {
         try {
-            tyrooVidAiSdk = new TyrooVidAiSdk(getApplicationContext(), this);//TyrooVidAiSdk.initialize(getApplicationContext());
-            tyrooVidAiSdk.setPlacementId("1559"); // 1559 or 1563
+            tyrooVidAiSdk = TyrooVidAiSdk.initialize(getApplicationContext(),"1559","009", this);//TyrooVidAiSdk.initialize(getApplicationContext());
             tyrooVidAiSdk.setAdViewLayout(adView);
-            tyrooVidAiSdk.setDynamicPlacement(true);
             tyrooVidAiSdk.enableCaching(true);
-            tyrooVidAiSdk.setPackageName("009");
-            tyrooVidAiSdk.validate();
+            tyrooVidAiSdk.loadAds();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,36 +46,42 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
     }
 
     @Override
-    public void onSuccess(String message, String placementId) {
-        Log.d("DiscoverWallActivity", "onSuccess: " + message);
-
+    public void onAdLoaded(String placementId) {
+        Log.d(TAG, "onAdLoaded: "+placementId);
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    public void onAdDisplayed() {
+        Log.d(TAG, "onAdDisplayed");
     }
 
     @Override
-    public void onRenderingAds(Boolean status) {
-        Log.d("DiscoverWallActivity", "onRenderingAds: " + Boolean.toString(status));
+    public void onAdOpened() {
+        Log.d(TAG, "onAdOpened");
     }
 
     @Override
-    public void onRenderedAds(Boolean status, String placementId) {
-        Log.d("DiscoverWallActivity", "onRenderedAds: " + Boolean.toString(status));
-        if (status){
-            tyrooVidAiSdk.displayAds();
-        }
+    public void onAdClosed() {
+        Log.d(TAG, "onAdClosed");
     }
 
     @Override
-    public void onDisplayAds(Boolean status) {
-        Log.d("DiscoverWallActivity", "onDisplayAds: " + Boolean.toString(status));
+    public void onAdCompleted() {
+        Log.d(TAG, "onAdCompleted");
+    }
+
+    @Override
+    public void onAdClicked() {
+        Log.d(TAG, "onAdClicked");
+    }
+
+    @Override
+    public void onAdLeftApplication() {
+        Log.d(TAG, "onAdLeftApplication");
     }
 
     @Override
     public void onFailure(String errorMsg) {
-        Log.e("DiscoverWallActivity", "onFailure: " + errorMsg);
+        Log.e(TAG, "onFailure: " + errorMsg);
     }
 }

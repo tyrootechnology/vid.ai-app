@@ -8,8 +8,9 @@ import com.tyroo.tva.sdk.AdView;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
 
-public class VideoInFeedActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooSdkListener {
+public class VideoInFeedActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
 
+    private static final String TAG = "VideoInFeedActivity";
     AdView adView;
     TyrooVidAiSdk tyrooVidAiSdk;
 
@@ -24,63 +25,59 @@ public class VideoInFeedActivity extends AppCompatActivity implements TyrooVidAi
 
     private void initTyrooVidAiSdk() {
         try {
-            tyrooVidAiSdk = new TyrooVidAiSdk(getApplicationContext(), this);//TyrooVidAiSdk.initialize(getApplicationContext());
-            tyrooVidAiSdk.setPlacementId("1707");
+            tyrooVidAiSdk = TyrooVidAiSdk.initialize(getApplicationContext(),"1707","009", this);//TyrooVidAiSdk.initialize(getApplicationContext());
             tyrooVidAiSdk.setAdViewLayout(adView);
-            tyrooVidAiSdk.setDynamicPlacement(true);
             tyrooVidAiSdk.enableCaching(true);
-            tyrooVidAiSdk.setPackageName("009");
-            tyrooVidAiSdk.validate();
+            tyrooVidAiSdk.loadAds();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        tyrooVidAiSdk.displayAds(adView);
-//    }
-
     @Override
     protected void onDestroy() {
-        //InitiateTyrooSdk.destroyInstance();
         adView.removeAllViews();
         tyrooVidAiSdk.flush();
         super.onDestroy();
     }
 
     @Override
-    public void onSuccess(String message, String placementId) {
-        Log.d("VideoInFeedActivity", "onSuccess: " + message);
-
+    public void onAdLoaded(String placementId) {
+        Log.d(TAG, "onAdLoaded: "+placementId);
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    public void onAdDisplayed() {
+        Log.d(TAG, "onAdDisplayed");
     }
 
     @Override
-    public void onRenderingAds(Boolean status) {
-        Log.d("VideoInFeedActivity", "onRenderingAds: " + Boolean.toString(status));
+    public void onAdOpened() {
+        Log.d(TAG, "onAdOpened");
     }
 
     @Override
-    public void onRenderedAds(Boolean status, String placementId) {
-        Log.d("VideoInFeedActivity", "onRenderedAds: " + Boolean.toString(status));
-        if (status) {
-            tyrooVidAiSdk.displayAds();
-        }
+    public void onAdClosed() {
+        Log.d(TAG, "onAdClosed");
     }
 
     @Override
-    public void onDisplayAds(Boolean status) {
-        Log.d("VideoInFeedActivity", "onDisplayAds: " + Boolean.toString(status));
+    public void onAdCompleted() {
+        Log.d(TAG, "onAdCompleted");
+    }
+
+    @Override
+    public void onAdClicked() {
+        Log.d(TAG, "onAdClicked");
+    }
+
+    @Override
+    public void onAdLeftApplication() {
+        Log.d(TAG, "onAdLeftApplication");
     }
 
     @Override
     public void onFailure(String errorMsg) {
-        Log.e("VideoInFeedActivity", "onFailure: " + errorMsg);
+        Log.e(TAG, "onFailure: " + errorMsg);
     }
 }
