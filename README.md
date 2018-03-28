@@ -147,7 +147,7 @@ Interstitial video ads are full-screen ad formats covering the interface of an a
 At Tyroo we're massive believers in feedback! Here are some common ways to share your thoughts with us:
   - Posting issue/question/enhancement on our [issues page](https://github.com/tyrootechnology/vid.ai-app/issues).
   - Email us: support@tyroo.com
-  - FAQs : https://github.com/tyrootechnology/vid.ai-app/wiki/FAQs
+  - FAQs: https://github.com/tyrootechnology/vid.ai-app/wiki/FAQs
   
 
 ## ProGuard Rules
