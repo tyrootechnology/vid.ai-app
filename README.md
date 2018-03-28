@@ -17,7 +17,7 @@ Integrating the VID.AI Video Ads SDK into an app is the first step toward displa
 
 ### Requirements 
 - Use Android Studio 2.0 or higher
-- Target Android API level 14 or higher (added in sdk version 1.0.7)
+- Target Android API level 16 or higher
 
 ### Register App
 - Please contact support@tyroo.com for register the application.
@@ -41,19 +41,19 @@ allprojects {
 Step 2: Add the following line to the dependencies element in your application module’s build.gradle.
 
 ```groovy
-compile 'com.tyroo:vidai:1.0.5'
+compile 'com.tyroo:vidai:1.1.2'
 ```
 Step 3: Sync your Gradle project to ensure that the dependency is downloaded by the build system.
 
 
 **Method 2:** Manual Download
 
-* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.0.5.aar)
+* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.1.2.aar)
 
 
 To manually include external or downloaded AAR file into your project create a directory named 'libs' into your app module.
 
-Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.0.5.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
+Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.1.2.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
 
 
 ```groovy
@@ -70,7 +70,7 @@ and now open app level build.grdle file and add .aar file
 
 ```groovy
 dependencies {
-       compile(name:'vidai-release-1.0.5', ext:'aar')
+       compile(name:'vidai-release-1.1.2', ext:'aar')
 }
 ```
 
@@ -88,15 +88,15 @@ To monetize with Tyroo Vid.AI SDK using AAR file, you must add the following dep
 ```
 * Okhttp
 ```groovy
- compile 'com.squareup.okhttp3:okhttp:3.9.0'
+ compile 'com.squareup.okhttp3:okhttp:3.10.0'
 ```
 * RecyclerView
 ```groovy
  compile 'com.android.support:recyclerview-v7:25.3.1'
 ```
-* Otto
+* CardView
 ```groovy
- compile 'com.squareup:otto:1.3.8'
+ compile 'com.android.support:cardview-v7:25.3.1'
 ```
 
 If the developer is already using the above libraries, he should not include it once again and this will lead to decrease in app size accordingly. For example, if an app developer is already using library- "com.android.support:recyclerview-v7:25.3.1" then he should not include it once again.
@@ -111,40 +111,44 @@ If everything goes well you will see library entry is made in build -> exploded-
 <dependency>
   <groupId>com.tyroo</groupId>
   <artifactId>vidai</artifactId>
-  <version>1.0.5</version>
+  <version>1.1.2</version>
   <type>pom</type>
 </dependency>
 ```
 
 ## Available Ad Formats 
+
+![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/screen.jpg)
+
 ### In Feed/In Article Video
 In-Feed or In-Article Video ads-namely, the ads that show up in the middle of the stream as you scroll through your favorite news feed, social feed, at some position of recyclerview, application start screen or some other portion of the app.
 
-In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines. Sample format is displayed below.
+In feed/In Article videos can be customised to suit the applications look and feel. Multiple customisation options are also available in it's integratin guidelines.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-Video)
-![InVideoFeed](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/InVideofeed.png)
+
 ### Offerwall Videos
-The Offerwall format lets you show multiple video ads in a Grid form. Sample format is displayed below.
+The Offerwall format lets you show multiple video ads in a Grid form.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Offerwall-Videos)
-![Offerwall](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/discoverwall.png)
+
 ### In Feed/In Article carousel Video
 The carousel format lets you show multiple videos ads, headlines and links, or calls to action in a single ad unit. Anyone who sees ad can then scroll through the carousel cards by swiping left-right on mobile phones.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/In-Feed-carousel-Video)
-![Carousel](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/carousel.png)
+
 ### Interstitial Video
 Interstitial video ads are full-screen ad formats covering the interface of an app and appearing at natural app action points.
 
 [See Integration Guidelines](https://github.com/tyrootechnology/vid.ai-app/wiki/Interstitial-Video)
-![Interstisial](https://github.com/tyrootechnology/vid.ai-app/blob/master/screenshots/interstitial.png)
+
 
 ## Your feedback and questions
 At Tyroo we're massive believers in feedback! Here are some common ways to share your thoughts with us:
   - Posting issue/question/enhancement on our [issues page](https://github.com/tyrootechnology/vid.ai-app/issues).
   - Email us: support@tyroo.com
+  - FAQs: https://github.com/tyrootechnology/vid.ai-app/wiki/FAQs
   
 
 ## ProGuard Rules
-If you are using ProGuard you might need to add these [PROGUARD RULES](PROGUARD_RULES.md):
+If you are using ProGuard you might need to add these [PROGUARD RULES](PROGUARD_RULES.md).

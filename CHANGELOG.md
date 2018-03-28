@@ -1,6 +1,21 @@
 Changelog
 =====================
 
+## 1.1.2 (March 28, 2018)
+- Modified TyrooAdListener callbacks and added onAdClicked, onAdOpened, onAdLeftApplication etc methods.
+- Change integration process.
+- Added new preload ads method.
+- Added PreloadAdsListener Interface.
+- 
+
+## 1.1.1 (March 20, 2018)
+- Handled println exception.
+
+## 1.0.7 (March 05, 2018)
+- Support for 18:9 resolution.
+- Update proguard-rules.
+- Improvements in InVideoFeed ad format.
+
 ## 1.0.6 (Feb 23, 2018)
 - Added new InVideoFeed Ad format.
 
