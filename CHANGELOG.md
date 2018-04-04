@@ -1,12 +1,16 @@
 Changelog
 =====================
 
+## 1.1.3 (April 04, 2018)
+- Remove response cache time.
+- Resolve OOM bug from video caching task.
+- Resolve Interstitial close button bug.
+
 ## 1.1.2 (March 28, 2018)
 - Modified TyrooAdListener callbacks and added onAdClicked, onAdOpened, onAdLeftApplication etc methods.
 - Change integration process.
 - Added new preload ads method.
 - Added PreloadAdsListener Interface.
-- 
 
 ## 1.1.1 (March 20, 2018)
 - Handled println exception.
