@@ -148,5 +148,41 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
                 Log.e(TAG,"onPreloadError: "+errorMsg);
             }
         });
+
+        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1635", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
+            @Override
+            public void onPreloadSuccess(String placementId) {
+                Log.d(TAG, "onPreloadSuccess: "+placementId);
+            }
+
+            @Override
+            public void onPreloadError(String errorMsg) {
+                Log.e(TAG,"onPreloadError: "+errorMsg);
+            }
+        });
+
+        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1559", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
+            @Override
+            public void onPreloadSuccess(String placementId) {
+                Log.d(TAG, "onPreloadSuccess: "+placementId);
+            }
+
+            @Override
+            public void onPreloadError(String errorMsg) {
+                Log.e(TAG,"onPreloadError: "+errorMsg);
+            }
+        });
+
+        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1707", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
+            @Override
+            public void onPreloadSuccess(String placementId) {
+                Log.d(TAG, "onPreloadSuccess: "+placementId);
+            }
+
+            @Override
+            public void onPreloadError(String errorMsg) {
+                Log.e(TAG,"onPreloadError: "+errorMsg);
+            }
+        });
     }
 }

@@ -70,6 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             }
         }
 
+        
         @Override
         public void onAdLoaded(String placementId) {
             Log.d(TAG, "onAdLoaded: "+placementId);

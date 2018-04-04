@@ -1,5 +1,29 @@
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in /home/sukhpal/Android/Sdk/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the proguardFiles
+# directive in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
 
-```groovy
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+#-ignorewarnings
 
 #vid.ai specific
 -keep class com.tyroo.tva.entities.* { *; }
@@ -57,17 +81,14 @@
 -keepattributes Signature
 # For using GSON @Expose annotation
 -keepattributes *Annotation*
-
 # Gson specific classes
--dontwarn sun.misc.**
--dontwarn com.google.gson.**
--keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.stream.** { *; }
 -keep class com.google.gson.** { *; }
 -keepclassmembers class com.google.gson** {*;}
--keep class com.tyroo.vidai.entities.** { *; }
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
+-keep class com.tyroo.vidai.entities.* { *; }
 
-```
+-dontwarn android.support.v4.**
+-keep public class com.google.android.gms.* { public *; }
+-dontwarn com.google.android.gms.**
+-keepnames class org.apache.** {*;}
+-keep public class org.apache.** {*;}

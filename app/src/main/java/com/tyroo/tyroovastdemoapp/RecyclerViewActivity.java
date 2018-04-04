@@ -14,7 +14,7 @@ import com.tyroo.tva.sdk.TyrooVidAiSdk;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends AppCompatActivity{
+public class RecyclerViewActivity extends AppCompatActivity {
 
     public static final String TAG = RecyclerViewActivity.class.getSimpleName();
 
@@ -35,7 +35,7 @@ public class RecyclerViewActivity extends AppCompatActivity{
             init();
             getViews();
             bindData();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -63,7 +63,9 @@ public class RecyclerViewActivity extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        tyrooVidAiSdk.flush();
+        if (tyrooVidAiSdk != null) {
+            tyrooVidAiSdk.flush();
+        }
     }
 
     public void bindData() {
@@ -102,12 +104,12 @@ public class RecyclerViewActivity extends AppCompatActivity{
         TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1707", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
             @Override
             public void onPreloadSuccess(String placementId) {
-                Log.d(TAG, "onPreloadSuccess: "+placementId);
+                Log.d(TAG, "onPreloadSuccess: " + placementId);
             }
 
             @Override
             public void onPreloadError(String errorMsg) {
-                Log.e(TAG,"onPreloadError: "+errorMsg);
+                Log.e(TAG, "onPreloadError: " + errorMsg);
             }
         });
     }
