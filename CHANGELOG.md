@@ -9,6 +9,11 @@ Changelog
 - Replace android native video player with Google ExoPlayer.
 - Modified TyrooVidAiSdk.initialize(Context, PLACEMENT_ID, PACKAGE_NAME, listner).
 
+## 1.1.3 (April 04, 2018)
+- Remove response cache time.
+- Resolve OOM bug from video caching task.
+- Resolve Interstitial close button bug.
+
 ## 1.1.2 (March 28, 2018)
 - Modified TyrooAdListener callbacks and added onAdClicked, onAdOpened, onAdLeftApplication etc methods.
 - Change integration process.
