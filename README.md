@@ -6,6 +6,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 For more information please see [the website](http://www.tyroo.com/)
 
+Download Demo APK File [here](http://rep.tyroo.com/SDK/vid.ai_demo.apk)
+
 ## Changelog
 To see what has changed in recent versions of VID.AI SDK for Android, see the [CHANGELOG](CHANGELOG.md).
 
@@ -41,19 +43,19 @@ allprojects {
 Step 2: Add the following line to the dependencies element in your application module’s build.gradle.
 
 ```groovy
-compile 'com.tyroo:vidai:1.1.2'
+compile 'com.tyroo:vidai:1.1.4'
 ```
 Step 3: Sync your Gradle project to ensure that the dependency is downloaded by the build system.
 
 
 **Method 2:** Manual Download
 
-* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.1.2.aar)
+* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.1.4.aar)
 
 
 To manually include external or downloaded AAR file into your project create a directory named 'libs' into your app module.
 
-Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.1.2.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
+Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.1.4.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
 
 
 ```groovy
@@ -70,7 +72,7 @@ and now open app level build.grdle file and add .aar file
 
 ```groovy
 dependencies {
-       compile(name:'vidai-release-1.1.2', ext:'aar')
+       compile(name:'vidai-release-1.1.4', ext:'aar')
 }
 ```
 
@@ -111,7 +113,7 @@ If everything goes well you will see library entry is made in build -> exploded-
 <dependency>
   <groupId>com.tyroo</groupId>
   <artifactId>vidai</artifactId>
-  <version>1.1.2</version>
+  <version>1.1.4</version>
   <type>pom</type>
 </dependency>
 ```

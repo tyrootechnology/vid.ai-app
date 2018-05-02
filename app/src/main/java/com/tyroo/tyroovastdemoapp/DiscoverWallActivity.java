@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.tyroo.tva.sdk.AdView;
+import com.tyroo.tva.sdk.ErrorCode;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
 public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
@@ -24,7 +25,7 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
 
     private void initTyrooVidAiSdk() {
         try {
-            tyrooVidAiSdk = TyrooVidAiSdk.initialize(getApplicationContext(),"1559","009", this);//TyrooVidAiSdk.initialize(getApplicationContext());
+            tyrooVidAiSdk = TyrooVidAiSdk.initialize(getApplicationContext(),"1559","009", this);
             tyrooVidAiSdk.setAdViewLayout(adView);
             tyrooVidAiSdk.enableCaching(true);
             tyrooVidAiSdk.loadAds();
@@ -34,20 +35,22 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
         }
     }
 
-
     @Override
     protected void onDestroy() {
-        //InitiateTyrooSdk.destroyInstance();
+        super.onDestroy();
         // RefWatcher refWatcher = DemoApplication.getRefWatcher(this);
         // refWatcher.watch(this);
         adView.removeAllViews();
         tyrooVidAiSdk.flush();
-        super.onDestroy();
+
     }
 
     @Override
     public void onAdLoaded(String placementId) {
-        Log.d(TAG, "onAdLoaded: "+placementId);
+        Log.d(TAG, "onAdLoaded: " + placementId);
+        if (tyrooVidAiSdk.isAdLoaded()) {
+            tyrooVidAiSdk.showAds();
+        }
     }
 
     @Override
@@ -81,7 +84,23 @@ public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidA
     }
 
     @Override
-    public void onFailure(String errorMsg) {
+    public void onFailure(int errorCode, String errorMsg) {
         Log.e(TAG, "onFailure: " + errorMsg);
+        switch (errorCode){
+            case ErrorCode.BAD_REQUEST:
+                //It may be due to some invalid/Blank value in the api request.
+                break;
+            case ErrorCode.NETWORK_ERROR:
+                //It may be due to slow/no internet connectivity.
+                break;
+            case ErrorCode.NO_INVENTORY:
+                //There is no fill.
+                break;
+            case ErrorCode.UNKNOWN:
+                //In case of any unexpected error or exception.
+                break;
+            default:
+
+        }
     }
 }

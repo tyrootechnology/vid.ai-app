@@ -19,17 +19,11 @@
             android:src="@drawable/sample_one"
             android:scaleType="fitCenter"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:src="@drawable/sample_two"
-            android:scaleType="fitCenter"/>
-
         <com.tyroo.tva.sdk.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:visibility="visible"
             app:videoAutoPlay="true"
             app:displayFooter="true"

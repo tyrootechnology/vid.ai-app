@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.tyroo.tva.sdk.ErrorCode;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
 public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
@@ -34,11 +35,13 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
         btnInterstitial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayInterstitialAds();
+                if (tyrooVidAiSdk.isAdLoaded()) {
+                    tyrooVidAiSdk.showAds();
+                }
             }
         });
 
-        preLoadRequest();
+        displayInterstitialAds();
 
     }
 
@@ -83,11 +86,10 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
 
     @Override
     protected void onDestroy() {
-        //InitiateTyrooSdk.destroyInstance();
+        super.onDestroy();
        // RefWatcher refWatcher = DemoApplication.getRefWatcher(this);
        // refWatcher.watch(this);
         tyrooVidAiSdk.flush();
-        super.onDestroy();
     }
 
     @Override
@@ -98,7 +100,8 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
 
     @Override
     public void onAdLoaded(String placementId) {
-        Log.d(TAG, "onAdLoaded: "+placementId);
+        Log.d(TAG, "onAdLoaded: " + placementId);
+
     }
 
     @Override
@@ -132,57 +135,24 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
     }
 
     @Override
-    public void onFailure(String errorMsg) {
+    public void onFailure(int errorCode, String errorMsg) {
         Log.e(TAG, "onFailure: " + errorMsg);
+        switch (errorCode){
+            case ErrorCode.BAD_REQUEST:
+                //It may be due to some invalid/Blank value in the api request.
+                break;
+            case ErrorCode.NETWORK_ERROR:
+                //It may be due to slow/no internet connectivity.
+                break;
+            case ErrorCode.NO_INVENTORY:
+                //There is no fill.
+                break;
+            case ErrorCode.UNKNOWN:
+                //In case of any unexpected error or exception.
+                break;
+            default:
+
+        }
     }
 
-    private void preLoadRequest() {
-        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1637", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
-            @Override
-            public void onPreloadSuccess(String placementId) {
-                Log.d(TAG, "onPreloadSuccess: "+placementId);
-            }
-
-            @Override
-            public void onPreloadError(String errorMsg) {
-                Log.e(TAG,"onPreloadError: "+errorMsg);
-            }
-        });
-
-        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1635", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
-            @Override
-            public void onPreloadSuccess(String placementId) {
-                Log.d(TAG, "onPreloadSuccess: "+placementId);
-            }
-
-            @Override
-            public void onPreloadError(String errorMsg) {
-                Log.e(TAG,"onPreloadError: "+errorMsg);
-            }
-        });
-
-        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1559", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
-            @Override
-            public void onPreloadSuccess(String placementId) {
-                Log.d(TAG, "onPreloadSuccess: "+placementId);
-            }
-
-            @Override
-            public void onPreloadError(String errorMsg) {
-                Log.e(TAG,"onPreloadError: "+errorMsg);
-            }
-        });
-
-        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1707", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
-            @Override
-            public void onPreloadSuccess(String placementId) {
-                Log.d(TAG, "onPreloadSuccess: "+placementId);
-            }
-
-            @Override
-            public void onPreloadError(String errorMsg) {
-                Log.e(TAG,"onPreloadError: "+errorMsg);
-            }
-        });
-    }
 }

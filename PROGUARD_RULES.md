@@ -2,11 +2,9 @@
 ```groovy
 
 #vid.ai specific
--keep class com.tyroo.tva.entities.* { *; }
--keep class com.tyroo.tva.vast.* { *; }
+-keep class com.tyroo.tva.** { *; }
 
 -dontwarn javax.annotation.**
-
 -dontwarn com.squareup.okhttp.**
 -dontwarn com.squareup.okhttp3.**
 -keep class com.squareup.okhttp.** { *;}

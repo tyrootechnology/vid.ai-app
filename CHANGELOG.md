@@ -1,12 +1,19 @@
 Changelog
 =====================
 
+## 1.1.4 (May 02, 2018)
+- Added New ErrorCode params in onFailure method.
+- Removed preload ads method.
+- Removed PreloadAdsListener Interface.
+- Added new loadAds(), showAds() and isAdLoaded() method.
+- Replace android native video player with Google ExoPlayer.
+- Modified TyrooVidAiSdk.initialize(Context, PLACEMENT_ID, PACKAGE_NAME, listner).
+
 ## 1.1.2 (March 28, 2018)
 - Modified TyrooAdListener callbacks and added onAdClicked, onAdOpened, onAdLeftApplication etc methods.
 - Change integration process.
 - Added new preload ads method.
 - Added PreloadAdsListener Interface.
-- 
 
 ## 1.1.1 (March 20, 2018)
 - Handled println exception.

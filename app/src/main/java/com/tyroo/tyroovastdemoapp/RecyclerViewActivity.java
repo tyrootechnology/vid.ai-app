@@ -31,7 +31,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
         try {
-            preLoadRequest();
             init();
             getViews();
             bindData();
@@ -98,19 +97,5 @@ public class RecyclerViewActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
 
-    }
-
-    private void preLoadRequest() {
-        TyrooVidAiSdk.preLoadAds(getApplicationContext(), "1707", "009", true, new TyrooVidAiSdk.AdPreloadListener() {
-            @Override
-            public void onPreloadSuccess(String placementId) {
-                Log.d(TAG, "onPreloadSuccess: " + placementId);
-            }
-
-            @Override
-            public void onPreloadError(String errorMsg) {
-                Log.e(TAG, "onPreloadError: " + errorMsg);
-            }
-        });
     }
 }
