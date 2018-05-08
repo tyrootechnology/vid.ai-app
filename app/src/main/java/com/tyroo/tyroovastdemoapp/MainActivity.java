@@ -7,10 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.tyroo.tva.interfaces.TyrooAdListener;
 import com.tyroo.tva.sdk.ErrorCode;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
-public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
+public class MainActivity extends AppCompatActivity implements TyrooAdListener {
 
     private static final String TAG = "MainActivity";
     Button btnVideoInFeed, btnDiscover, btnCarousal, btnInterstitial, btnWithRecyclerView;
@@ -31,18 +32,22 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
         btnWithRecyclerView.setOnClickListener(goVideoInFeedWithRecyclerView);
         btnDiscover.setOnClickListener(goDiscoverClick);
         btnCarousal.setOnClickListener(goCarousalClick);
-
+        btnInterstitial.setVisibility(View.INVISIBLE);
         btnInterstitial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tyrooVidAiSdk.isAdLoaded()) {
-                    tyrooVidAiSdk.showAds();
+                if (btnInterstitial.getText().equals("Refresh")){
+                    loadInterstitialAds();
+                }else {
+                    if (tyrooVidAiSdk.isAdLoaded()) {
+                        tyrooVidAiSdk.showAds();
+                    }
                 }
             }
         });
 
-        displayInterstitialAds();
-
+        loadInterstitialAds();
+        //loadAllAds();
     }
 
     private View.OnClickListener goVideoInFeedClick = new View.OnClickListener() {
@@ -73,11 +78,30 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
         }
     };
 
-    private void displayInterstitialAds() {
+    private void loadInterstitialAds() {
         try {
             tyrooVidAiSdk = TyrooVidAiSdk.initialize(getApplicationContext(),"1637","009", this);
             tyrooVidAiSdk.enableCaching(true);
             tyrooVidAiSdk.loadAds();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadAllAds() {
+        try {
+            TyrooVidAiSdk requestVideoFeed = TyrooVidAiSdk.initialize(getApplicationContext(),"1707","009", this);
+            requestVideoFeed.enableCaching(true);
+            requestVideoFeed.loadAds();
+
+            TyrooVidAiSdk requestDiscoverWall = TyrooVidAiSdk.initialize(getApplicationContext(),"1559","009", this);
+            requestDiscoverWall.enableCaching(true);
+            requestDiscoverWall.loadAds();
+
+            TyrooVidAiSdk requestCarousal = TyrooVidAiSdk.initialize(getApplicationContext(),"1635","009", this);
+            requestCarousal.enableCaching(true);
+            requestCarousal.loadAds();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,7 +125,10 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
     @Override
     public void onAdLoaded(String placementId) {
         Log.d(TAG, "onAdLoaded: " + placementId);
-
+        if (placementId.equals("1637")) {
+            btnInterstitial.setText("Interstitial Ads");
+            btnInterstitial.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -117,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
     @Override
     public void onAdClosed() {
         Log.d(TAG, "onAdClosed");
+        btnInterstitial.setText("Refresh");
     }
 
     @Override
@@ -137,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements TyrooVidAiSdk.Tyr
     @Override
     public void onFailure(int errorCode, String errorMsg) {
         Log.e(TAG, "onFailure: " + errorMsg);
+        btnInterstitial.setText("Refresh");
         switch (errorCode){
             case ErrorCode.BAD_REQUEST:
                 //It may be due to some invalid/Blank value in the api request.

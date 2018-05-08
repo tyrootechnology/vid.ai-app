@@ -46,8 +46,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.google.code.gson:gson:2.8.2'
-    //compile(name:'vidai-release', ext:'aar')
-    implementation 'com.tyroo:vidai:1.1.4'
+    //implementation(name:'vidai-release', ext:'aar')
+    implementation 'com.tyroo:vidai:1.1.5'
     //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
     //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 

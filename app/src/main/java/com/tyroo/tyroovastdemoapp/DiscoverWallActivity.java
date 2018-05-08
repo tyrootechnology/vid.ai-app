@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.tyroo.tva.interfaces.TyrooAdListener;
 import com.tyroo.tva.sdk.AdView;
 import com.tyroo.tva.sdk.ErrorCode;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
 
-public class DiscoverWallActivity extends AppCompatActivity implements TyrooVidAiSdk.TyrooAdListener {
+public class DiscoverWallActivity extends AppCompatActivity implements TyrooAdListener {
 
     private static final String TAG = "DiscoverWallActivity";
     AdView adView;

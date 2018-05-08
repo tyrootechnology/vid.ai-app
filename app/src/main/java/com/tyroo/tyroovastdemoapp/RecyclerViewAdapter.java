@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tyroo.tva.interfaces.TyrooAdListener;
 import com.tyroo.tva.sdk.AdView;
 import com.tyroo.tva.sdk.ErrorCode;
 import com.tyroo.tva.sdk.TyrooVidAiSdk;
@@ -51,7 +52,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    public class AdViewHolder extends RecyclerView.ViewHolder implements TyrooVidAiSdk.TyrooAdListener{
+    public class AdViewHolder extends RecyclerView.ViewHolder implements TyrooAdListener {
 
         AdView adView;
         TyrooVidAiSdk tyrooVidAiSdk;
@@ -181,7 +182,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 TyrooLog.d(TAG, "onBindViewHolder");
                 AdViewHolder adViewHolder = (AdViewHolder) holder;
 
-                //adViewHolder.adView.videoAutoPlay();
                 break;
 
         }
