@@ -1,7 +1,7 @@
 Changelog
 =====================
 
-## 1.1.4 (May 02, 2018)
+## 1.1.5 (May 08, 2018)
 - Added New ErrorCode params in onFailure method.
 - Removed preload ads method.
 - Removed PreloadAdsListener Interface.
