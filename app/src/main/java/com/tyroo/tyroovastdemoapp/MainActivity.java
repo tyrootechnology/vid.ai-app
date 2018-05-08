@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements TyrooAdListener {
         btnInterstitial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btnInterstitial.getText().equals("Refresh")){
+                if (tyrooVidAiSdk == null || btnInterstitial.getText().equals("Refresh")){
                     loadInterstitialAds();
                 }else {
                     if (tyrooVidAiSdk.isAdLoaded()) {
@@ -113,12 +113,13 @@ public class MainActivity extends AppCompatActivity implements TyrooAdListener {
         super.onDestroy();
        // RefWatcher refWatcher = DemoApplication.getRefWatcher(this);
        // refWatcher.watch(this);
-        tyrooVidAiSdk.flush();
+        if (tyrooVidAiSdk != null) {
+            tyrooVidAiSdk.flush();
+        }
     }
 
     @Override
     public void onBackPressed() {
-        //adView.removeAllViews();
         super.onBackPressed();
     }
 

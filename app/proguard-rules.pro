@@ -26,8 +26,7 @@
 #-ignorewarnings
 
 #vid.ai specific
--keep class com.tyroo.tva.entities.* { *; }
--keep class com.tyroo.tva.vast.* { *; }
+-keep class com.tyroo.tva.** { *; }
 
 -dontwarn javax.annotation.**
 
