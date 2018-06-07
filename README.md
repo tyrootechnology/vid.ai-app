@@ -72,7 +72,7 @@ and now open app level build.grdle file and add .aar file
 
 ```groovy
 dependencies {
-       compile(name:'vidai-release-1.1.7', ext:'aar')
+       compile(name:'vidai-release-1.1.8', ext:'aar')
 }
 ```
 
