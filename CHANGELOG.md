@@ -1,6 +1,13 @@
 Changelog
 =====================
 
+## 1.1.8 (June 07, 2018)
+- Resolved drawable bug for api level 19.
+
+## 1.1.7 (June 03, 2018)
+- Context casting bug resolved.
+- Remove inner interface TyrooAdListner from TyrooVidAiSdk class.
+
 ## 1.1.6 (May 08, 2018)
 - Added New ErrorCode params in onFailure method.
 - Removed preload ads method.

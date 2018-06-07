@@ -43,19 +43,19 @@ allprojects {
 Step 2: Add the following line to the dependencies element in your application module’s build.gradle.
 
 ```groovy
-compile 'com.tyroo:vidai:1.1.7'
+compile 'com.tyroo:vidai:1.1.8'
 ```
 Step 3: Sync your Gradle project to ensure that the dependency is downloaded by the build system.
 
 
 **Method 2:** Manual Download
 
-* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.1.7.aar)
+* Download the Vid.ai SDK AAR file from [here](http://rep.tyroo.com/SDK/vidai-release-1.1.8.aar)
 
 
 To manually include external or downloaded AAR file into your project create a directory named 'libs' into your app module.
 
-Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.1.7.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
+Lets say you have kept aar file in libs folder ( assume file name is vidai-release-1.1.8.aar ) then in app build.gradle specify following and click sync project with Gradle files. Open Project level build.gradle and add flatDir{dirs 'libs'} like did below
 
 
 ```groovy
@@ -113,7 +113,7 @@ If everything goes well you will see library entry is made in build -> exploded-
 <dependency>
   <groupId>com.tyroo</groupId>
   <artifactId>vidai</artifactId>
-  <version>1.1.7</version>
+  <version>1.1.8</version>
   <type>pom</type>
 </dependency>
 ```
